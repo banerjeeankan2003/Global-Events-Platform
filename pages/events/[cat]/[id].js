@@ -9,7 +9,7 @@ export async function getStaticPaths() {
   const allEvents = data.allEvents;
 
  const allPaths = allEvents
-  .filter((event) => event.city && event.id)
+ .filter((event) => event && event.city && event.id)
   .map((event) => {
     return {
       params: {

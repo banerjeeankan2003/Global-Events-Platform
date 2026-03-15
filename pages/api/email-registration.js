@@ -28,14 +28,13 @@ export default function handler(req, res) {
     const { email, eventId } = req.body;
 
     if (!email || !email.includes('@')) {
-      res.status(422).json({ message: 'Invalid email address' });
+      return res.status(422).json({ message: 'Invalid email address' });
     }
 
     const newAllEvents = allEvents.map((ev) => {
       if (ev.id === eventId) {
         if (ev.emails_registered.includes(email)) {
-          res.status(409).json({ message: 'This email has already been registered' });
-          return res;
+          return res.status(409).json({ message: 'This email has already been registered' });
         }
         return {
           ...ev,
@@ -44,8 +43,15 @@ export default function handler(req, res) {
       }
       return ev;
     });
+    
+   // ONLY write file locally
 
-    fs.writeFileSync(filePath, JSON.stringify({ events_categories, allEvents: newAllEvents }));
+  if (process.env.NODE_ENV === 'development') {
+    fs.writeFileSync(
+      filePath,
+      JSON.stringify({ events_categories, allEvents: newAllEvents })
+    );
+  }
 
     res.status(201).json({
       message: `You have been registered successfully with the email: ${email}`,

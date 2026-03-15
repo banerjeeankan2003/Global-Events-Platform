@@ -6,7 +6,10 @@ const SingleEvent = ({ data }) => {
   const inputEmail = useRef();
   const router = useRouter();
   const [message, setMessage] = useState('');
-
+  
+  if (!data) {
+    return <p>Event not found</p>;
+  }
   const onSubmit = async (e) => {
     e.preventDefault();
     const emailValue = inputEmail.current.value;

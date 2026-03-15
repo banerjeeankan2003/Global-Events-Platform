@@ -8,11 +8,13 @@ export async function getStaticPaths() {
   const data = await import('../../../data/data.json');
   const allEvents = data.allEvents;
 
-  const allPaths = allEvents.map((path) => {
+ const allPaths = allEvents
+  .filter((event) => event.city && event.id)
+  .map((event) => {
     return {
       params: {
-        cat: path.city,
-        id: path.id,
+        cat: event.city,
+        id: event.id,
       },
     };
   });

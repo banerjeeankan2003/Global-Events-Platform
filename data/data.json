@@ -101,6 +101,14 @@
       "emails_registered": ["banerjeeankan2003@gmail.com", "2205534@kiit.ac.in"]
     },
     {
+        "id": "11",
+        "title": "International Film Festival",
+        "city": "milan",
+        "description": "An international film festival showcasing independent films, premieres, and discussions with filmmakers from around the world.",
+        "image": "https://images.unsplash.com/photo-1615414047026-802692414b79?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "emails_registered": []
+    },
+    {
       "id": "12",
       "title": "Milan Art & Culture Festival",
       "city": "milan",

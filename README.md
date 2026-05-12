@@ -7,6 +7,12 @@ Users can browse event categories, view detailed event pages, and register their
 
 ---
 
+## 🚀 Live Demo
+
+[Explore Global Events Platform](https://global-events-platform.vercel.app/) 🔗
+
+---
+
 ## 🚀 Features
 
 - 🌆 Browse events by city
